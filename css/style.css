@@ -1,0 +1,95 @@
+html {
+	background: #333333;
+}
+
+.board {
+	background: #333333;
+	width: 90%;
+	margin: 50px auto 0;
+}
+
+	.row {
+		display: flex;
+		flex-flow: row nowrap;
+		width: 100%;
+		margin-bottom: 4px;
+	}
+
+	.row:nth-child(odd){
+		margin-left: 1.25%;
+	}
+
+.hole {
+	width: calc(80% / 44);
+	height: 0;
+	padding-bottom: calc(80% / 44);
+	margin-left: 0.5%;
+	border-radius: 50%;
+	background: #111111;
+	cursor: crosshair;
+	box-shadow: inset -1px -1px 1px 0 rgba(255,255,255, 0.25);
+}
+
+.colors {
+	list-style-type: none;
+	padding: 0;
+	font-size: 0;
+	text-align: center;
+	margin-left: -20px;
+}
+
+	.color {
+		display: inline-block;
+		height: 20px;
+		width: 20px;
+		margin: 25px;
+		border-radius: 50%;
+		cursor: pointer;
+		transition: all 0.25s ease-in;
+	}
+
+	.current-color {
+		transform: scale(1.5);
+		transform-origin: center center;
+		box-shadow: 0 0 3px 4px black;
+	}
+
+.red {
+	background: red;
+	box-shadow: inset 1px 1px 1px 0 rgba(255,255,255, 0.5), 1px 1px 1px 0 rgba(0,0,0.0.5), 0 0 5px 0 rgba(255, 0, 0, 1);
+}
+
+.blue {
+	background: blue;
+	box-shadow: inset 1px 1px 1px 0 rgba(255,255,255, 0.5), 1px 1px 1px 0 rgba(0,0,0.0.5), 0 0 5px 0 rgba(0, 0, 255, 1);
+}
+
+.orange {
+	background: orange;
+	box-shadow: inset 1px 1px 1px 0 rgba(255,255,255, 0.5), 1px 1px 1px 0 rgba(0,0,0.0.5), 0 0 5px 0 rgba(255, 165, 0, 1);
+}
+
+.white {
+	background: white;
+	box-shadow: inset 1px 1px 1px 0 rgba(255,255,255, 0.5), 1px 1px 1px 0 rgba(0,0,0.0.5), 0 0 5px 0 rgba(255, 255, 255, 1);
+}
+
+.green {
+	background: green;
+	box-shadow: inset 1px 1px 1px 0 rgba(255,255,255, 0.5), 1px 1px 1px 0 rgba(0,0,0.0.5), 0 0 5px 0 rgba(0, 128, 0, 1);
+}
+
+.yellow {
+	background: yellow;
+	box-shadow: inset 1px 1px 1px 0 rgba(255,255,255, 0.5), 1px 1px 1px 0 rgba(0,0,0.0.5), 0 0 5px 0 rgba(255, 255, 0, 1);
+}
+
+.pink {
+	background: pink;
+	box-shadow: inset 1px 1px 1px 0 rgba(255,255,255, 0.5), 1px 1px 1px 0 rgba(0,0,0.0.5), 0 0 5px 0 rgba(255, 192, 203, 1);
+}
+
+.purple {
+	background: purple;
+	box-shadow: inset 1px 1px 1px 0 rgba(255,255,255, 0.5), 1px 1px 1px 0 rgba(0,0,0.0.5), 0 0 5px 0 rgba(128, 0, 128, 1);
+}
