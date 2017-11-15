@@ -30,6 +30,48 @@ html {
 	box-shadow: inset -1px -1px 1px 0 rgba(255,255,255, 0.25);
 }
 
+.buttons {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 50px;
+	border-top: 1px solid #999999;
+	padding: 20px 50px;
+	margin-top: 20px;
+}
+
+.button {
+	width: auto;
+	border-radius: 2px;
+	background: none;
+	border: 2px outset #ff6e00;
+	cursor: pointer;
+	color: #ff6e00;
+	transition: all 0.2s ease-in;
+}
+
+.button--save {
+	border-color: #56FF1C;
+	color: #56FF1C;
+}
+
+.button--load {
+	
+}
+
+.button--reset {
+	border-color: red;
+	color: red;
+}
+
+.button--export {
+	
+}
+
+.button:hover {
+	border-color: white;
+	color: white;	
+}
+
 .colors {
 	list-style-type: none;
 	padding: 0;
