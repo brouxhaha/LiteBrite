@@ -117,11 +117,10 @@ var LiteBrite = {
 		}
 	},
 
-	changeHoleColor: function(hole){
-		hole.className = 'hole';
-		
-		if(this.currentColor){
-			hole.classList.add(this.currentColor);
+	changeHoleColor: function(event){
+		if(this.currentColor && event.target.classList.contains('hole')){
+			event.target.className = 'hole';
+			event.target.classList.add(this.currentColor);
 		} 
 	},
 
@@ -164,7 +163,7 @@ var LiteBrite = {
 	},
 
 	clickHandler: function(){
-		this.holes.forEach(hole => hole.addEventListener('click', this.changeHoleColor.bind(this, hole)));
+		this.mainDiv.addEventListener('click', this.changeHoleColor.bind(this));
 		this.pegs.forEach(peg => peg.addEventListener('click', this.selectColor.bind(this, peg)));
 		this.resetBtn.addEventListener('click', this.clearBoard.bind(this));
 		this.saveBtn.addEventListener('click', this.saveBoard.bind(this));
