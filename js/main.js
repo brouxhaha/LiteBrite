@@ -106,7 +106,9 @@ var LiteBrite = {
 		this.resetBtn = this.buttonDiv.querySelector('.button--reset');
 	},
 
-	selectColor: function(color){
+	selectColor: function(event){
+		let color = event.target;
+
 		if(!color.classList.contains('current-color')){
 			this.pegs.forEach(color => color.classList.remove('current-color'));
 			this.currentColor = color.dataset.color;
@@ -119,9 +121,37 @@ var LiteBrite = {
 
 	changeHoleColor: function(event){
 		if(this.currentColor && event.target.classList.contains('hole')){
-			event.target.className = 'hole';
-			event.target.classList.add(this.currentColor);
+			let hole = event.target;
+
+			hole.className = 'hole';
+			hole.classList.add(this.currentColor);
 		} 
+	},
+
+	determineClick: function(event){
+		if(event.target.classList.contains('hole')){
+			this.changeHoleColor(event);
+		}
+
+		if(event.target.classList.contains('color')){
+			this.selectColor(event);
+		}
+
+		if(event.target == this.resetBtn){
+			this.clearBoard();
+		}
+
+		if(event.target == this.saveBtn){
+			this.saveBoard();
+		}
+
+		if(event.target == this.loadBtn){
+			this.loadBoard();
+		}
+
+		if(event.target == this.exportBtn){
+			this.exportBoardData();
+		}
 	},
 
 	clearBoard: function(){
@@ -163,12 +193,13 @@ var LiteBrite = {
 	},
 
 	clickHandler: function(){
-		this.mainDiv.addEventListener('click', this.changeHoleColor.bind(this));
-		this.pegs.forEach(peg => peg.addEventListener('click', this.selectColor.bind(this, peg)));
-		this.resetBtn.addEventListener('click', this.clearBoard.bind(this));
+		this.mainDiv.addEventListener('click', this.determineClick.bind(this));
+		//this.mainDiv.addEventListener('click', this.changeHoleColor.bind(this));
+		//this.pegs.forEach(peg => peg.addEventListener('click', this.selectColor.bind(this, peg)));
+		/*this.resetBtn.addEventListener('click', this.clearBoard.bind(this));
 		this.saveBtn.addEventListener('click', this.saveBoard.bind(this));
 		this.loadBtn.addEventListener('click', this.loadBoard.bind(this));
-		this.exportBtn.addEventListener('click', this.exportBoardData.bind(this));
+		this.exportBtn.addEventListener('click', this.exportBoardData.bind(this));*/
 	}
 };
 
