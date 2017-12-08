@@ -120,12 +120,10 @@ var LiteBrite = {
 	},
 
 	changeHoleColor: function(event){
-		if(this.currentColor && event.target.classList.contains('hole')){
-			let hole = event.target;
+		let hole = event.target;
 
-			hole.className = 'hole';
-			hole.classList.add(this.currentColor);
-		} 
+		hole.className = 'hole';
+		hole.classList.add(this.currentColor);
 	},
 
 	determineClick: function(event){
@@ -162,12 +160,9 @@ var LiteBrite = {
 
 	saveBoard: function(){
 		this.saveArray = [];
-		console.log('saved');
 		this.holes.forEach(hole => {
 			this.saveArray.push(hole.className);
 		});
-
-		console.log(this.saveArray);
 
 		localStorage.setItem('LiteBrite', JSON.stringify(this.saveArray));
 	},
