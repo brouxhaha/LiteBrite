@@ -32,11 +32,17 @@ html {
 
 .buttons {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 50px;
 	border-top: 1px solid #999999;
 	padding: 20px 50px;
 	margin-top: 20px;
+}
+
+@media (min-width: 480px){
+	.buttons {
+		grid-template-columns: repeat(4, 1fr);
+	}
 }
 
 .button {
@@ -134,4 +140,10 @@ html {
 .purple {
 	background: purple;
 	box-shadow: inset 1px 1px 1px 0 rgba(255,255,255, 0.5), 1px 1px 1px 0 rgba(0,0,0.0.5), 0 0 5px 0 rgba(128, 0, 128, 1);
+}
+
+.exported-code {
+	padding: 0 5%;
+	word-wrap: break-word;
+	color: #aaa;
 }
